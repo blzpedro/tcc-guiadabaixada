@@ -1,0 +1,19 @@
+$primaria: #ffb937;
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+
+@import 'main.scss';
+@import 'index.scss';
+@import 'login.scss';
+@import 'mobile.scss';
+@import 'pesquisa.scss';
+@import 'modal.scss';
+@import 'effects.scss';
+@import 'resultado.scss';
