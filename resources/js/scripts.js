@@ -34,10 +34,6 @@ function success(position) {
    
 }
 
-function fail(){
-  alert("Erro!")
-}
-
 function initMap() {
   
     // Criar o mapa.
