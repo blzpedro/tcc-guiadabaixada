@@ -49764,7 +49764,7 @@ $("#locais").change(function () {
 
 function geoLocationInit() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(success, fail);
+    navigator.geolocation.getCurrentPosition(success);
   } else {
     alert("Navegador não suportado, tente em outro!");
   }
@@ -49777,10 +49777,6 @@ function success(position) {
   myPosUrl = latval + ',' + lngval;
   myPos = new google.maps.LatLng(latval, lngval);
   initMap();
-}
-
-function fail() {
-  alert("Erro!");
 }
 
 function initMap() {

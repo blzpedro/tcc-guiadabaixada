@@ -18,7 +18,7 @@ $(document).ready(function() {
 //Pegar localização
 function geoLocationInit() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(success, fail);
+        navigator.geolocation.getCurrentPosition(success);
     } else {
         alert("Navegador não suportado, tente em outro!");
     }
@@ -199,6 +199,7 @@ function initMap() {
       $('.modal-header').append(favoritar)
     }});
     
+   
     
 
   }

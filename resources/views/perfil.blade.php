@@ -138,6 +138,7 @@
                     </div>
                 </div> 
             </div>
+            <div class="msg-perfil"></div>
         <div class="botao-subir large-1">
                 <a class="down" href="#topo">
                     <img src="images/down-arrow.png" alt="Descer" class="logo subir">

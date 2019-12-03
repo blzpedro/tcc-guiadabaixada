@@ -20,12 +20,20 @@ function alterarPerfil(){
         console.log('FAIL', msg);
     }).always(function (msg) {
         if(typeof msg.success != "undefined"){
-            // Mensagem de sucesso
+            $(".msg-perfil").html("<article class='sucess' style='display:block;'>"+msg.success+"</article>")
+            $(".msg-perfil").css({"opacity": "1","background-color": "green"});
+            setTimeout(function(){
+                $(".msg-perfil").css({"opacity": "0", "transition": ".7s all","background-color": "green"});
+            },2000); 
             console.log(msg.success);
         }
         if(typeof msg.error != "undefined"){
-            //Mensagem de error
-            console.error(msg.error);
+            $(".msg-perfil" ).html("<article class='erro' style='display:block;'>"+msg.error+"</article>" );
+            $(".msg-perfil").css({"opacity": "1","background-color": "#B90003"});
+            setTimeout(function(){
+                $(".msg-perfil").css({"opacity": "0", "transition": ".7s all","background-color": "#B90003"});
+            },2000); 
+            console.log(msg.error);
         }
     });
     
