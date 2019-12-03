@@ -16,7 +16,7 @@ Route::get('/', 'IndexController@index');
 Route::get('/places', 'PlacesController@index', function () {})->middleware('auth');
 
 Route::get('/perfil', 'PerfilController@index', function () {})->middleware('auth');
-
+Route::put('/perfil', 'PerfilController@update', function () {})->middleware('auth');
 
 
 Auth::routes();

@@ -111,27 +111,28 @@
             <div class="paragrafo-box large-8 medium-8 small-12 grid-container" id="0">
                 <h5 class="font-bold text-center titulo">Altere seus dados</h5>    
                 <div class="grid-x texto">
-                    <div class="grid-x large-10 medium-12 small-10 box-login">
+                    <div class="grid-x large-10 medium-12 small-10 box-login" id="perfil">
+                    <input type="hidden"  name="token" class="large-12 small-12 medium-12" value="{{csrf_token()}}">
                         <div class="grid-x large-5 medium-5 small-12 float-center">                                
                             <label>Nome:</label>
-                            <input type="text" class="large-12 small-12 medium-12">
+                            <input type="text"  name="nome" class="large-12 small-12 medium-12">
                         </div>
                         <div class="grid-x large-5 medium-5 small-12 float-center">
                             <label>Email:</label>
-                            <input type="email" class="large-12 small-12 medium-12">
+                            <input type="email"  name="email" class="large-12 small-12 medium-12">
                         </div>
                         <div class="grid-x large-5 medium-5 small-12 float-center">                                
                             <label>Nova senha:</label>
-                            <input type="password" class="large-12 small-12 medium-12">
+                            <input type="password" name="senha" class="large-12 small-12 medium-12">
                         </div>
                         <div class="grid-x large-5 medium-5 small-12 float-center">
                             <label>Confirme sua nova senha:</label>
-                            <input type="password" class="large-12 small-12 medium-12">
+                            <input type="password" name="c-senha" class="large-12 small-12 medium-12">
                         </div>
                         <div class="large-12 small-12 medium-12 grid-x">
                                 <div class=" box-botao-comecar float-center ">
                                     <br>
-                                    <a href="#" class="botao-comecar" style="">ALTERAR »</a>
+                                    <a class="botao-comecar" onclick="alterarPerfil()" style="">ALTERAR »</a>
                                 </div>
                             </div>  
                     </div>
@@ -142,5 +143,5 @@
                     <img src="images/down-arrow.png" alt="Descer" class="logo subir">
                 </a>
         </div>
-    </main>   
+    </main>  
 @endsection
