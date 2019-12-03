@@ -87,7 +87,7 @@ return [
     'min' => [
         'numeric' => 'O :attribute tem que ter pelo nenos :min.',
         'file' => 'O :attribute tem que ter pelo nenos :min kilobytes.',
-        'string' => 'O :attribute tem que ter pelo nenos :min characters.',
+        'string' => 'A senha tem que ter pelo menos :min caracteres.',
         'array' => 'The :attribute must have at least :min items.',
     ],
     'not_in' => 'The selected :attribute is invalid.',
@@ -113,7 +113,7 @@ return [
     'starts_with' => 'The :attribute must start with one of the following: :values',
     'string' => 'The :attribute must be a string.',
     'timezone' => 'The :attribute must be a valid zone.',
-    'unique' => 'The :attribute já foi escolhido.',
+    'unique' => 'O :attribute já foi escolhido.',
     'uploaded' => 'The :attribute failed to upload.',
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
