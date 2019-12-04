@@ -198,8 +198,6 @@ function initMap() {
       $('.modal-header').addClass('grid-x');
       $('.modal-header').append(favoritar)
     }});
+  
     
-   
-    
-
   }

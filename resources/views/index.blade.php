@@ -24,7 +24,7 @@
             </ul>
         </nav>
     </header>
-    <main class="grid-x" id="topo">
+    <main class="grid-x home" id="topo">
         <div class="sessao-um large-12 small-12 medium-12">
                 <div class="sessao-um-opacity">            
                     <h1 class="logo">GUIA DA BAIXADA</h1>
@@ -138,5 +138,9 @@
                     <img src="{{asset('images/down-arrow.png')}}" alt="Descer" class="logo subir">
                 </a>
         </div>
-    </main>    
+    </main>   
 @endsection
+
+@section('scripts')
+<script src="{{asset('js/sweetalert.js')}}"></script>
+@stop

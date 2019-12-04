@@ -12261,6 +12261,10 @@ section span {
   right: 0;
 }
 
+.swal-footer{
+  text-align: center;
+}
+
 .msg-perfil{
   height: 50px;
   width: 100%;
