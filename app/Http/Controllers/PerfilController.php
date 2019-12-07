@@ -7,7 +7,7 @@ use App\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-
+use App\Favorito;
 
 class PerfilController extends Controller
 {
@@ -19,7 +19,12 @@ class PerfilController extends Controller
 
     public function index()
     {
-        return view('perfil');
+        $favoritos = Favorito::where(['user_id' => Auth::user()->id])->get();
+        $reg = array('\\');
+        foreach($favoritos as $section){
+            $fav[] = str_replace($reg, "", $section);
+        }
+        return view('perfil', ['favoritos' => $fav]);
     }
 
     public function update(Request $request){

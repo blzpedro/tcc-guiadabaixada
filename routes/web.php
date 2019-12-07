@@ -17,6 +17,7 @@ Route::get('/places', 'PlacesController@index', function () {})->middleware('aut
 
 Route::get('/perfil', 'PerfilController@index', function () {})->middleware('auth');
 Route::put('/perfil', 'PerfilController@update', function () {})->middleware('auth');
+Route::post('/favorito', 'FavoritoController@store');
 
 
 Auth::routes();

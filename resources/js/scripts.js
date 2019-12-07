@@ -15,6 +15,7 @@ $(document).ready(function() {
 })
 
 
+
 //Pegar localização
 function geoLocationInit() {
     if (navigator.geolocation) {
@@ -115,7 +116,7 @@ function initMap() {
       var irParaLocal = document.createElement('a');
       var maisInfos = document.createElement('button');
       var fotoLocal = document.createElement('img');
-      var favoritar = document.createElement('div');
+      var favoritar = document.createElement('a');
 
       if (place.rating == undefined){
         place.rating = 0;
@@ -125,7 +126,7 @@ function initMap() {
         place.user_ratings_total = 0;
       }
 
-      favoritar.innerHTML = '<a>Favoritar local</a>';
+      favoritar.innerHTML = 'Favoritar local';
       nomeLocal.innerHTML = '<span>Nome do local:</span><br> ' + place.name;
       notaLocal.innerHTML =  '<span>Nota:</span><br> ' + place.rating.toFixed(1);
       avaliacoes.innerHTML =  '<span>Avaliações:</span><br> ' + place.user_ratings_total;
@@ -135,6 +136,7 @@ function initMap() {
       maisInfos.innerHTML = 'Sobre o local';
       
       favoritar.setAttribute('class', 'boxFavoritar')
+      favoritar.setAttribute('onclick', 'salvarLocal("local-'+i+'")');
       irParaLocal.setAttribute('href', 'https://www.google.com/maps/dir/'+ myPosUrl +'/'+ place.vicinity +'/');
       irParaLocal.setAttribute('target', '_blank');
       telefone.setAttribute('class', 'infosTel');
@@ -148,9 +150,10 @@ function initMap() {
       irParaLocal.setAttribute('class', 'hvr-left');
       fotoLocal.setAttribute('src', getImagem);
       fotoLocal.setAttribute('class', 'imagem-local');
+      div.setAttribute('id', 'local-'+i);
 
 
-      section.append(fotoLocal, nomeLocal, notaLocal, avaliacoes, endereco);
+      section.append(favoritar, fotoLocal, nomeLocal, notaLocal, avaliacoes, endereco);
       div.append(section, irParaLocal, maisInfos, modal);
       modal.innerHTML;
       div.className = "box-locais";   
@@ -167,6 +170,8 @@ function initMap() {
 
   }
 
+
+ 
   function infos(id){
     $('.infoLocal').html('')
     $('.modal-title').html('')
@@ -183,7 +188,7 @@ function initMap() {
       website = result.result.website;
       telefone = result.result.formatted_phone_number;
       titulo = '<h5>Informações do local: '+nome+'</h5>';
-      favoritar = '<a style="margin: 0 auto; background-color: red; padding: 15px 20px; color: white; ">Adicionar local aos favoritos</a>';
+      // favoritar = '<a style="margin: 0 auto; background-color: red; padding: 15px 20px; color: white; ">Adicionar local aos favoritos</a>';
       if (website == undefined){
         var websiteUndefined = ' não possui website.';
         html = '<p>Horários: '+horario+'</p><p>Telefone(s): <a href="tel:'+telefone+'">'+telefone+'</a></p>'+ websiteUndefined

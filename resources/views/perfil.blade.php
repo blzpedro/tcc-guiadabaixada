@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+
 <header>
         <nav>
             <ul class="grid-x">            
@@ -35,74 +36,14 @@
                 <h5 class="font-bold titulo text-center">Locais favoritos</h5>
                 <div class="grid-x texto">
                     <div class="large-12 small-12 medium-12 grid-x">
+                        @foreach($favoritos as $section)
                         <div class="large-3 medium-5 small-8 grid-x box-resultado">
-                            <div class="imagem-local large-6 medium-6 small-6">
-                                <p>IMAGEM DO LOCAL</p>
-                            </div>
-                            <div class="large-8 medium-8 small-8 texto-local">
-                                <p>
-                                    <span>Nome:</span><br>
-                                    Balada New Village<br>
-                                    <span>Horário:</span><br>
-                                    22h00 até 05h00 <br>
-                                    <span>Telefone:</span><br> 
-                                    (XX) - XXXX-XXXX
-                                </p>
-                                <br>
-                                <a rel="modal:open" href="#local1">Veja mais sobre o local</a>
-                                
-                                <div id="local1" class="modal">  
-                                    <p>
-                                        <span>Nome:</span><br>
-                                        Balada New Village<br>
-                                        <span>Horário:</span><br>
-                                        22h00 até 05h00 <br>
-                                        <span>Telefone:</span><br> 
-                                        (XX) - XXXX-XXXX <br>
-                                        <span>Endereço:</span><br>
-                                        Av. Pres. Wilson, 50 - José Menino <br> Santos - SP, 11065-200 
-                                    </p>
-                                </div>
-                            </div>
+                        
+                        {!!html_entity_decode($section, ENT_QUOTES)!!}
+                            </section>
                         </div>
-                        <div class="large-3 medium-5 small-8  grid-x box-resultado">
-                            <div class="imagem-local large-6 medium-6 small-6">
-                                <p>IMAGEM DO LOCAL</p>
-                            </div>              
-                            <div class="large-8 medium-8 small-8 texto-local">
-                                <p>
-                                <span>Nome:</span><br>
-                                    Balada Tremendão<br>
-                                <span>Horário:</span><br>
-                                    22h00 até 05h00<br>
-                                <span>Telefone:</span><br> 
-                                    (XX) - XXXX-XXXX
-                                </p>
-                                <br>
-                                <a rel="modal:open" href="#local1">Veja mais sobre o local</a>
-                            </div>                  
-                        </div>
-                        <div class="large-3 medium-5 small-8 grid-x box-resultado">
-                            <div class="imagem-local large-6 medium-6 small-6">
-                                 <p>IMAGEM DO LOCAL</p>
-                            </div>    
-                            <div class="large-8 medium-8 small-8 texto-local">
-                                <p> 
-                                <span>Nome:</span><br>
-                                    Balada The Joy<br>
-                                <span>Horário:</span><br>
-                                    22h00 até 05h00<br>
-                                <span>Telefone:</span><br> 
-                                    (XX) - XXXX-XXXX
-                                </p>
-                                <br>
-                                <a rel="modal:open" href="#local1">Veja mais sobre o local</a>
-                            </div>
-                        </div>                        
-                    </div>                 
-                </div> 
-            </div>
-        </div>
+                        @endforeach
+                        
 
         <div class="sessao-dois large-12 small-12 medium-12">
                 <div class="sessao-um-opacity"></div>

@@ -38,3 +38,10 @@ function alterarPerfil(){
     });
     
 }
+
+function salvarLocal(local){
+    let content = $("#"+local).html();
+    $.post('/favorito', {'local': content}, function(data){
+        console.log(data);
+    });
+}
