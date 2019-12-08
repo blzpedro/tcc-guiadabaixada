@@ -22,7 +22,8 @@ class PerfilController extends Controller
         $favoritos = Favorito::where(['user_id' => Auth::user()->id])->get();
         $reg = array('\\');
         foreach($favoritos as $section){
-            $fav[] = str_replace($reg, "", $section);
+            $favoritos_reg = mb_convert_encoding($section->local, "UTF-8");
+            $fav[] = str_replace($reg, "", $favoritos_reg);
         }
         return view('perfil', ['favoritos' => $fav]);
     }
