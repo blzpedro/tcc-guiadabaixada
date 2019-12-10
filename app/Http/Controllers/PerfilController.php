@@ -14,12 +14,14 @@ class PerfilController extends Controller
 
     public function __construct()
     {
+
         $this->middleware('auth');
+
     }
 
     public function index()
     {
-        $favoritos = Favorito::where(['user_id' => Auth::user()->id])->get();
+    $favoritos = Favorito::where(['user_id' => Auth::user()->id])->get();
 	$reg = array('\\');
 
         foreach($favoritos as $section){
